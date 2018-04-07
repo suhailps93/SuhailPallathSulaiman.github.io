@@ -116,8 +116,18 @@ window.__cfRocketOptions = {byc:0,p:1521556077,petok:"15fa8aae2a91f9db8f1f3281dc
 <p>The output from the scan program will be a bunch of pointclouds as shown below.<br>
 <img src="images/scan_output.gif" alt="alt text"></p>
 <h5><a id="Step_2_Stitch_the_pointclouds_21"></a>Step 2: Stitch the pointclouds</h5>
-<p>The <a href="http://stitch.py">stitch.py</a> file reads these pointclouds as input and gives out a merged 3D pointcloud of the object scanned as shown below. The code initially use RANSAC algorithm for global registration of the pointcloud and later using ICP algorithm for local registration. The final output will be saved in both .pcd and .ply file formats.<br>
-<img src="images/merge_output.gif" alt="alt text"></p>
+<p>The <a href="https://github.com/SuhailPallathSulaiman/Synthetic-dataset-generation-for-machine-learning-models/blob/master/src/3D_stiching.py">3D_stiching.py</a>  file reads these pointclouds as input and gives out a merged 3D pointcloud of the object scanned as shown below.</p>
+<p>The user have optional control overfollowing things while stiching</p>
+<ul>
+<li>Choose between RANSAC and coarse ICP algorithm for global registration.</li>
+<li>Choose between fine ICP and color ICP algorithm for local registration.</li>
+<li>Choose how individual pointclouds are merged ie., Pairwise or merging to a base pointcloud</li>
+<li>Input the fitness value below which the merge should be rejected</li>
+</ul>
+<p>The final output will be saved in both .pcd and .ply file formats.<br>
+<img src="images/merge_output.gif" alt="alt text"></p><br>
+<p>Process of 3D stitching on a human is shown below<br>
+<img src="images/human_stiching.gif" alt="alt text"></p><br>
 <h5><a id="Step_3_Surface_reconstruction_26"></a>Step 3: Surface reconstruction</h5>
 <p>The code for performing surface reconstruction is yet to be implemented. For time being Meshlab is used. The .ply file is imported in to meshlab and ball pivoting surface reconstruction algorithm is used to reconstruct the surface. A texture map is also generated in the form of a .png file so that the mesh will have color when opened in simulation software like Gazebo. The reconstructed mesh is then exported as a COLLADA file. An example is shown below.<br>
 <img src="images/surface_reconstruction_output.gif" alt="alt text"></p>
