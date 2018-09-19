@@ -750,3 +750,40 @@ section
 	margin-left: 0px;
 	margin-bottom: 50px;
 }
+
+#video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 563px;
+}
+.video-holder{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 563px;
+}
+.resimg {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 563px;
+}

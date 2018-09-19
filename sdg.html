@@ -123,9 +123,17 @@
 <div class="proj_title">Synthetic dataset generation for machine learning</div>
 </div>
 <!-- 				<div class="main_content_scroll mCustomScrollbar" data-mcs-theme="minimal-dark"> -->
-<div class="video-responsive">
+<!-- <div class="video-responsive">
     <iframe width="420" height="315" src="https://www.youtube.com/embed/wTG6hmNOVkA" frameborder="0" allowfullscreen></iframe>
+</div> -->
+
+<div class="video-holder">
+  <div id="video-container">
+      <iframe width="1000" height="563" src="https://www.youtube.com/embed/wTG6hmNOVkA" frameborder="0" allowfullscreen>        </iframe> 
+  </div>
+
 </div>
+
 <!-- Skills Content -->
 <div class="edu_title">Summary</div>
 <div class="edu_text">
@@ -149,7 +157,13 @@
 </p><p>● Pause Saving:- This option can be used to pause saving the pointclouds.
 </p><p>The output from the scan program will be a bunch of pointclouds as shown below.
 </div>
-<img src="https://suhailpallathsulaiman.github.io/images/scan_output.gif" width="460" height="345">
+
+<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/scan_output.gif"   allowfullscreen> 
+  </div>
+</div>
+
 <br><br>
 <div class="edu_title">Step 2: Stitch the pointclouds</div>
 <div class="edu_text">
@@ -163,12 +177,23 @@
 </p><p>● Input the fitness value below which the merge should be rejected
 </p><p>The final output will be saved in both .pcd and .ply file formats.
 </div>
-<img src="https://suhailpallathsulaiman.github.io/images/merge_output.gif" width="460" height="345">
+
+<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/merge_output.gif"  allowfullscreen> 
+  </div>
+</div>
 
 <div class="edu_text">
 <p>The animation below shows the pointcloud stitching process on a human scan.</p>
 </div>
-<img src="https://suhailpallathsulaiman.github.io/images/human_stiching.gif" width="460" height="345">
+
+
+<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/human_stiching.gif"  allowfullscreen> 
+  </div>
+</div>
 
 <br><br>
 <div class="edu_title">Step 3: Surface reconstruction</div>
@@ -176,7 +201,13 @@
 <p>The code for performing surface reconstruction is not yet implemented. For time being Meshlab is used. The .ply file is imported in to meshlab and ball pivoting surface reconstruction algorithm is used to reconstruct the surface. A texture map is also generated in the form of a .png file so that the mesh will have color when opened in simulation software like Gazebo. The reconstructed mesh is then exported as a COLLADA file. An example is shown below.
 
 </div>
-<img src="https://suhailpallathsulaiman.github.io/images/surface_reconstruction_output.gif" width="460" height="345">
+
+<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/surface_reconstruction_output.gif"  allowfullscreen> 
+  </div>
+</div>
+
 <br><br>
 <div class="edu_title">Step 4: Generate Simulated Images.</div>
 <div class="edu_text">
@@ -186,9 +217,19 @@
 </p><p>● Spawn the object model of which the fake images have to be generated.
 </p><p>● Spawn a camera model. Once the camera model is spawned it starts saving the images in its vision.
 </p><p>● Starts the set_model_state.py node which changes the pose of both the camera and the object in such a way that the camera covers all the angles of the object. The gazebo world in action is shown below.</p>
-	<img src="https://suhailpallathsulaiman.github.io/images/gazebo_simulation.gif" width="460" height="345">
+	
+	<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/gazebo_simulation.gif"  allowfullscreen> 
+  </div>
+</div>
 </p><p>Example output images fromthe Gazebo simulationis shown below.</p>
-	<img src="https://suhailpallathsulaiman.github.io/images/gazebo_output.png" width="460" height="345">
+
+	<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/gazebo_output.png"  allowfullscreen> 
+  </div>
+</div>
 	
 </div>
 
@@ -198,7 +239,12 @@
 <p>Gazebo give images with empty backgrounds, which is not a good dataset for training object recognition models. The bounding_n_background.py program performs the following tasks.
 </p><p>● Reads the output images from gazebo, crops out only the object of interest from the images using OpenCV, and paste the cropped objects to random images provided as input, so that the machine learning model will be more robust in recognising the object within a lot of other objects.Some example images are shown below
 </p>
-	<img src="https://suhailpallathsulaiman.github.io/images/bg_output.png" width="460" height="345">
+
+	<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/bg_output.png"  allowfullscreen> 
+  </div>
+</div>
 	<p>● This program also generate a .csv file which have all the data required for training the machine learning model like the bounding box of the object in the image (which is found using OpenCV), dimensions of the image and the label for the object (The name with which the trained model should identify the object)
 </p><p>Now the generate_tfrecord.py program reads the .csv files and generates this data in tfrecord file format, which is the input type that is used for training tensorflow object recognition API.
 </p>
@@ -211,7 +257,12 @@
 <p>Tensorflow object detection API was used for demonstration purpose. The train.py program starts the training process.
 </p><p>The graph showing the total loss with number of steps during the training process is shown below.
 </div>
-<img src="https://suhailpallathsulaiman.github.io/images/tensorflow_total_loss.png" width="460" height="345">
+
+	<div class="video-holder">
+  <div id="video-container">
+      <img class="resimg" width="1000" height="563" src="https://suhailpallathsulaiman.github.io/images/tensorflow_total_loss.png"  allowfullscreen> 
+  </div>
+</div>
 <br><br>
 <div class="edu_title">Step 7: Live detection</div>
 <div class="edu_text">
@@ -219,10 +270,12 @@
 </p>
 </div>
 
-<div class="video-responsive">
-    <iframe width="420" height="315" src="https://www.youtube.com/embed/w1X17ET0MNY" frameborder="0" allowfullscreen></iframe>
-</div>
+<div class="video-holder">
+  <div id="video-container">
+      <iframe width="1000" height="563" src="https://www.youtube.com/embed/w1X17ET0MNY" frameborder="0" allowfullscreen>        </iframe> 
+  </div>
 
+</div>
 
 
 					</div>
