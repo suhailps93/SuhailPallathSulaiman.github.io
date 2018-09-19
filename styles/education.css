@@ -637,14 +637,14 @@ section
 	font-size: 18px;
 	font-weight: 500;
 	color: #7a798c;
-	line-height: 0.75;
+	line-height: 1.0;
 }
 .main_title
 {
 	font-size: 72px;
 	font-weight: 800;
 	color: #100f3a;
-	line-height: 0.75;
+	line-height: 1.0;
 	margin-top: 30px;
 	margin-left: -4px;
 	margin-bottom: 50px;
@@ -692,7 +692,7 @@ section
 	font-size: 24px;
 	font-weight: 700;
 	color: #8583e1;
-	line-height: 0.75;
+	line-height: 1.0;
 }
 .proj_image
 {
@@ -723,7 +723,7 @@ section
 	font-size: 24px;
 	font-weight: 700;
 	color: #100f3a;
-	line-height: 0.75;
+	line-height: 1.0;
 }
 .edu_subtitle
 {
@@ -740,7 +740,7 @@ section
 }
 
 
-.proj_title
+/*.proj_title
 {
 	font-size: 60px;
 	font-weight: 800;
@@ -750,7 +750,7 @@ section
 	margin-left: 0px;
 	margin-bottom: 50px;
 }
-
+*/
 #video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -786,4 +786,20 @@ iframe {
     height: 100%;
     max-width: 1000px;
     max-height: 563px;
+}
+
+.proj_title
+{
+	top: 0;
+	color: #100f3a;
+	line-height: 1.0;
+	font-weight: 800;
+	font-size: 60px;
+	padding-bottom: 40px;
+}
+
+.proj_title_container
+{
+	width: 100%;
+	height: auto;
 }

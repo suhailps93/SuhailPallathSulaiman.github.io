@@ -671,14 +671,14 @@ figcaption
 	font-size: 18px;
 	font-weight: 500;
 	color: #7a798c;
-	line-height: 0.75;
+	line-height: 1.0;
 }
 .main_title
 {
 	font-size: 72px;
 	font-weight: 800;
 	color: #100f3a;
-	line-height: 0.75;
+	line-height: 1.0;
 	margin-top: 30px;
 	margin-left: -4px;
 	margin-bottom: 50px;
@@ -749,7 +749,7 @@ figcaption
 	font-size: 13px;
 	color: #100f3a;
 	font-weight: 500;
-	line-height: 0.75;
+	line-height: 1.0;
 	margin-bottom: 17px;
 }
 .progressbar-text
